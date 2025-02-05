@@ -19,10 +19,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
   
-    // LabOrder.associate = (models) => {
-    //   LabOrder.belongsTo(models.Patient, { foreignKey: "patientId" });
-    // };
-  
     return LabOrder;
   };
   

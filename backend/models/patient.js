@@ -21,19 +21,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      userId: {  // Foreign key to User model
+      userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'Users', // Name of the User table
+          model: 'Users',
           key: 'id'
         }
       }
     });
-
-    // Patient.associate = (models) => {
-    //   Patient.belongsTo(models.User, { foreignKey: "userId" });
-    // };
 
     return Patient;
 };

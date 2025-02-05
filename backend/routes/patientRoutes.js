@@ -6,6 +6,7 @@ const { verifyPractitioner, verifyToken } = require('../middleware/roleMiddlewar
 
 router.get('/', verifyPractitioner, patientController.getAllPatients);
 router.get('/:id/medical-history', verifyToken, patientController.getMedicalHistory);
+router.get('/search', verifyPractitioner, patientController.searchPatients);
 router.post('/:id/allergies', verifyPractitioner, patientController.addAllergy);
 router.post('/:id/lab-orders', verifyPractitioner, patientController.addLabOrder);
 router.post('/:id/lab-results', verifyPractitioner, patientController.addLabResult);

@@ -23,10 +23,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
   
-    // LabResult.associate = (models) => {
-    //   LabResult.belongsTo(models.Patient, { foreignKey: "patientId" });
-    // };
-  
     return LabResult;
   };
   
