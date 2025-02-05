@@ -69,7 +69,7 @@ npm start
 
 The server will run on the port specified in your `.env` file or default to `5001`.
 
-## Docker Setup
+## Running the Application with Docker
 
 To run the application using Docker Compose, follow these steps:
 
