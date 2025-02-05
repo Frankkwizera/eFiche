@@ -1,4 +1,3 @@
-// tests/authController.test.js
 const { register, login } = require('../controllers/authController');
 const { User } = require('../models');
 const jwt = require('jsonwebtoken');

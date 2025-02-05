@@ -1,4 +1,3 @@
-// tests/patientController.test.js
 const { getAllPatients } = require('../controllers/patientController');
 const { Patient } = require('../models');
 

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      DB_NAME: your-database-name
+      DB_USER: your-database-username
+      DB_PASS: your-database-password
+      DB_HOST: db
+      JWT_SECRET: your-jwt-secret
+      PORT: 5001
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: your-database-name
+      POSTGRES_USER: your-database-username
+      POSTGRES_PASSWORD: your-database-password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

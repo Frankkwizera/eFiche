@@ -67,7 +67,7 @@ Start the server:
 npm start
 ```
 
-The server will run on the port specified in your `.env` file or default to `5000`.
+The server will run on the port specified in your `.env` file or default to `5001`.
 
 ## API Endpoints
 
