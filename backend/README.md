@@ -1,4 +1,4 @@
-# Backend Application
+# eFiche Take Home Test - Backend Application
 
 This is a backend application built with Node.js and Express, designed to manage user authentication and patient data. It uses PostgreSQL as the database and Sequelize as the ORM.
 
@@ -23,7 +23,7 @@ This is a backend application built with Node.js and Express, designed to manage
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Frankkwizera/eFiche
    cd backend
    ```
 
@@ -35,7 +35,7 @@ This is a backend application built with Node.js and Express, designed to manage
 
 3. Set up environment variables:
 
-   Create a `.env` file in the root directory and add the following:
+   Create a `.env` file or copy .env.example in the root directory and add the following:
 
    ```plaintext
    DB_NAME=<your-database-name>
@@ -75,6 +75,10 @@ The server will run on the port specified in your `.env` file or default to `500
 ### Patient Routes
 
 - `GET /patients/:id/medical-history`: Get a patient's medical history.
+
+### Practitioner Routes
+
+- `GET /patients/`: Get all patients.
 - `POST /patients/:id/allergies`: Add an allergy for a patient.
 - `POST /patients/:id/lab-orders`: Add a lab order for a patient.
 - `POST /patients/:id/lab-results`: Add a lab result for a patient.
@@ -82,8 +86,7 @@ The server will run on the port specified in your `.env` file or default to `500
 
 ## Middleware
 
-- `authMiddleware.js`: Verifies JWT tokens.
-- `roleMiddleware.js`: Verifies practitioner role for certain routes.
+- `roleMiddleware.js`: Verifies practitioner/patient roles for certain routes.
 
 ## Models
 
@@ -93,19 +96,3 @@ The server will run on the port specified in your `.env` file or default to `500
 - LabOrder
 - LabResult
 - Prescription
-
-## Development
-
-To run the application in development mode with live reloading:
-
-```bash
-npm run dev
-```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the ISC License.
