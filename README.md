@@ -60,7 +60,7 @@ To run the tests for this application, use the following command:
 npm test
 ```
 
-## Running the Application
+## Running the Application without Docker
 
 Start the server:
 ```bash
@@ -68,6 +68,29 @@ npm start
 ```
 
 The server will run on the port specified in your `.env` file or default to `5001`.
+
+## Docker Setup
+
+To run the application using Docker Compose, follow these steps:
+
+1. Ensure you have Docker and Docker Compose installed on your machine.
+
+2. Build the Docker images:
+
+   ```bash
+   docker-compose build
+   ```
+
+3. Start the Docker containers:
+
+   ```bash
+   docker-compose up -d
+   ```
+
+   This command will start the application in detached mode. Ensure your `.env` file is correctly configured with your environment variables.
+
+4. Verify the application is running by accessing `http://localhost:5001/ping` in your browser or using a tool like `curl` or Postman.
+
 
 ## API Endpoints
 
