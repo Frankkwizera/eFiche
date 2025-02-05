@@ -52,6 +52,14 @@ This is a backend application built with Node.js and Express, designed to manage
    node syncDatabase.js
    ```
 
+## Running Tests
+
+To run the tests for this application, use the following command:
+
+```bash
+npm test
+```
+
 ## Running the Application
 
 Start the server:

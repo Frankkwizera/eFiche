@@ -24,7 +24,6 @@ exports.register = async (req, res) => {
         userId: user.id,
       });
     }
-    console.log("User registered", user);
     res.json({ message: "User registered successfully", user });
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
