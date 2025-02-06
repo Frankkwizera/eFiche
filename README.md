@@ -46,11 +46,23 @@ This is a full stack application built with Node.js, Express, and React, designe
    PORT=<your-port-number>
    ```
 
-4. Sync the database:
+4. Sync the database and seed initial data:
 
    ```bash
    node syncDatabase.js
    ```
+
+   This command will drop and recreate the database tables, and then seed them with initial data, including users, patients, and associated medical records.
+
+   **Seeded Users for Login:**
+
+   - **Patient User:**
+     - Username: `eFichePatient`
+     - Password: `eFiche123`
+
+   - **Practitioner User:**
+     - Username: `eFichePractitioner`
+     - Password: `eFiche123`
 
 ## Installation - Frontend
 
