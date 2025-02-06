@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5001"; // Update this based on your backend URL
+// const API_BASE_URL = "http://localhost:5001"; // Update this based on your backend URL
+const API_BASE_URL = "https://efiche-backend.onrender.com";
 
 const getAuthHeaders = () => ({
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
