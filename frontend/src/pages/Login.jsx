@@ -13,8 +13,13 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await login(username, password);
-      localStorage.setItem("token", data.token); // Store JWT in local storage
-      navigate("/dashboard"); // Redirect to dashboard
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.role);
+      if (data.role === "practitioner") {
+        navigate("/practitioner");
+      } else {
+        navigate("/patient");
+      }
     } catch (err) {
       setError(err);
     }

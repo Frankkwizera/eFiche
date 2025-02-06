@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchPatients, addMedicalRecord } from "../api/api";
 import { isAuthenticated } from "../api/auth";
+import LogoutButton from "./Logout";
 
 const PractitionerDashboard = () => {
   const navigate = useNavigate();
@@ -168,6 +169,7 @@ const PractitionerDashboard = () => {
 
       {message && <p className="text-green-500 mt-3 success-message">{message}</p>}
       {error && <p className="text-red-500 mt-3 error-message">{error}</p>}
+      <LogoutButton />
     </div>
   );
 };

@@ -42,4 +42,17 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
-module.exports = { verifyPractitioner, verifyToken };
+const verifyAnyToken = async (req, res, next) => {
+  const token = req.header("Authorization")?.split(" ")[1];
+  if (!token) return res.status(403).json({ error: "Access denied" });
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    res.status(401).json({ error: "Invalid token" });
+  }
+};
+
+module.exports = { verifyPractitioner, verifyToken, verifyAnyToken };

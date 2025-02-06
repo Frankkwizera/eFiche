@@ -11,6 +11,37 @@ exports.getAllPatients = async (req, res) => {
   }
 };
 
+exports.getLoggedInPatientMedicalHistory = async (req, res) => {
+  try {
+    const patient = await Patient.findOne({ where: { userId: req.user.id } });
+    if (!patient) {
+      return res.status(404).send('Patient not found'); 
+    }
+
+    const allergies = await Allergy.findAll({ where: { patientId: patient.id } });
+    const labOrders = await LabOrder.findAll({ where: { patientId: patient.id } });
+    const labResults = await LabResult.findAll({ where: { patientId: patient.id } });
+    const prescriptions = await Prescription.findAll({ where: { patientId: patient.id } }); 
+
+    res.json({
+      patient: {
+        id: patient.id,
+        fullName: patient.fullName,
+        age: patient.age,
+        gender: patient.gender,
+        contactInfo: patient.contactInfo,
+      },
+      allergies,
+      labOrders,
+      labResults,
+      prescriptions
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+};
+
 exports.getMedicalHistory = async (req, res) => {
   try {
     const patient = await Patient.findByPk(req.params.id);

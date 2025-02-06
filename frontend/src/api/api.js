@@ -16,6 +16,11 @@ export const login = async (username, password) => {
   }
 };
 
+export const logout = async () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+};
+
 export const fetchPatients = async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/patients`, getAuthHeaders());
@@ -36,4 +41,13 @@ export const addMedicalRecord = async (patientId, recordType, data) => {
     } catch (error) {
       throw error.response?.data?.message || "Failed to add record.";
     }
+};
+
+export const fetchPatientRecords = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/patients/medical-history`, getAuthHeaders());
+    return response.data;
+  } catch (error) {
+    throw error.response?.data?.message || "Failed to fetch records.";
+  }
 };

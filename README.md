@@ -1,6 +1,6 @@
-# eFiche Take Home Test - Backend Application
+# eFiche Take Home Test - Full Stack Application
 
-This is a backend application built with Node.js and Express, designed to manage user authentication and patient data. It uses PostgreSQL as the database and Sequelize as the ORM.
+This is a full stack application built with Node.js, Express, and React, designed to manage user authentication and patient data. It uses PostgreSQL as the database and Sequelize as the ORM.
 
 ## Features
 
@@ -18,7 +18,7 @@ This is a backend application built with Node.js and Express, designed to manage
 - PostgreSQL
 - npm
 
-## Installation
+## Installation - Backend
 
 1. Clone the repository:
 
@@ -52,7 +52,22 @@ This is a backend application built with Node.js and Express, designed to manage
    node syncDatabase.js
    ```
 
-## Running Tests
+## Installation - Frontend
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Frankkwizera/eFiche
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Running Tests both Backend and Frontend
 
 To run the tests for this application, use the following command:
 
@@ -62,12 +77,21 @@ npm test
 
 ## Running the Application without Docker
 
+### Backend
+
 Start the server:
 ```bash
 npm start
 ```
 
 The server will run on the port specified in your `.env` file or default to `5001`.
+
+### Frontend
+
+Start the server:
+```bash
+npm run dev
+```
 
 ## Running the Application with Docker
 
