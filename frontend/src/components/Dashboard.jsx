@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../api/auth";

@@ -1,4 +1,4 @@
-# eFiche Take Home Test - Full Stack Application
+# eFiche Full Stack Application
 
 This is a full stack application built with Node.js, Express, and React, designed to manage user authentication and patient data. It uses PostgreSQL as the database and Sequelize as the ORM.
 
